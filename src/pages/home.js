@@ -17,9 +17,15 @@ export async function renderHome(app) {
     getUserProfile(),
     getTopArtists('short_term', 3),
     getTopTracks('short_term', 3)
-  ]);
+  ]).catch(err => {
+    console.error("Data fetching error:", err);
+    return [null, null, null];
+  });
 
-  if (!profile) return;
+  if (!profile) {
+    logout();
+    return;
+  }
 
   const artists = artistsData?.items || [];
   const tracks = tracksData?.items || [];
