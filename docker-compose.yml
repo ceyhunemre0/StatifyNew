@@ -6,5 +6,5 @@ services:
         VITE_SPOTIFY_CLIENT_ID: ${VITE_SPOTIFY_CLIENT_ID}
     container_name: statify
     ports:
-      - "3000:80"
+      - "3010:80"
     restart: unless-stopped
