@@ -1,6 +1,6 @@
 // Spotify PKCE Authorization Code Flow
 const CLIENT_ID = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
-const REDIRECT_URI = 'http://127.0.0.1:5173/callback';
+const REDIRECT_URI = window.location.origin + '/callback';
 const SCOPES = "user-top-read user-read-private user-read-email";
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
 const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
